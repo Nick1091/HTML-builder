@@ -28,5 +28,5 @@ rl.on('line', (data) => {
 })
 rl.on('close', () => {
   console.log('good bye');
-  rl.close();
+  process.exit();
 });
