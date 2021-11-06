@@ -5,12 +5,9 @@ const rl = readline.createInterface(process.stdin, process.stdout);
  
 console.log('Hello, Enter you text:')
 
-fs.writeFile(
-    path.join(__dirname, 'text.txt'),
-    '', (err) => {
-        if (err) throw err;
-    }
-);
+fs.writeFile(path.join(__dirname, 'text.txt'), '', (err) => {
+  if (err) throw err;
+});
 
 rl.on('line', (data) => {
   if(data.trim() == 'exit'){
@@ -18,11 +15,8 @@ rl.on('line', (data) => {
     process.exit();
   }
   fs.appendFile(
-    path.join(__dirname, 'text.txt'),
-    `${data}\n`, (err) => {
-      if (err) {
-        throw err;
-      }
+    path.join(__dirname, 'text.txt'), `${data}\n`, (err) => {
+      if (err) throw err;      
     }
   );  
 })
